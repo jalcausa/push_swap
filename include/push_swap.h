@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/17 19:37:07 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/18 19:59:38 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@ typedef struct s_node
 {
 	int				value;
 	int				index;
-	struct s_node	*prv;
+	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
