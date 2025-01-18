@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:13:44 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/18 23:34:04 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:50:01 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ void	sa(t_node **stack_a)
 {
 	int	aux_val;
 	int	aux_index;
-	
-	if (!stack_a)
-		return ;
-	if (!*stack_a || !((*stack_a)->next))
+
+	if (!stack_a || !(*stack_a) || !((*stack_a)->next))
 		return ;
 	aux_val = (*stack_a)->value;
 	aux_index = (*stack_a)->index;
@@ -33,10 +31,8 @@ void	sb(t_node **stack_b)
 {
 	int	aux_val;
 	int	aux_index;
-	
-	if (!stack_b)
-		return ;
-	if (!*stack_b || !((*stack_b)->next))
+
+	if (!stack_b || !(*stack_b) || !((*stack_b)->next))
 		return ;
 	aux_val = (*stack_b)->value;
 	aux_index = (*stack_b)->index;

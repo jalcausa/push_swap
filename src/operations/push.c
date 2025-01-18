@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:42:23 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/18 20:18:21 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:53:20 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	t_node	*node_to_move;
 	t_node	*new_b;
 
-	if (!*stack_b)
+	if (!stack_a || !stack_b)
+		return ;
+	if (!(*stack_b))
 		return ;
 	node_to_move = *stack_b;
 	new_b = (*stack_b)->next;
@@ -31,7 +33,9 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	t_node	*node_to_move;
 	t_node	*new_a;
 
-	if (!*stack_a)
+	if (!stack_a || !stack_b)
+		return ;
+	if (!(*stack_a))
 		return ;
 	node_to_move = *stack_a;
 	new_a = (*stack_a)->next;
