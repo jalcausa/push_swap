@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:54:10 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 10:55:31 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 18:50:06 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	rra(t_stack **stack_a)
 	(*stack_a)->first->prev = last;
 	//Actualizamos el primer nodo del stack
 	(*stack_a)->first = last;
+	ft_printf("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
@@ -50,10 +51,12 @@ void	rrb(t_stack **stack_b)
 	(*stack_b)->first->prev = last;
 	//Actualizamos el primer nodo del stack
 	(*stack_b)->first = last;
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
+	ft_printf("rrr\n");
 }

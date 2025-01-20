@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:36:11 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 11:13:08 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 18:49:46 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ra(t_stack **stack_a)
 	first->next = NULL;
 	// Se actualiza el nuevo último nodo de la estructura stack
 	(*stack_a)->last = first;
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack **stack_b)
@@ -50,10 +51,12 @@ void	rb(t_stack **stack_b)
 	first->next = NULL;
 	// Se actualiza el nuevo último nodo de la estructura stack
 	(*stack_b)->last = first;
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
+	ft_printf("rr\n");
 }

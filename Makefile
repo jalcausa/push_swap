@@ -11,7 +11,9 @@ SRC = push_swap.c \
 		operations/push.c		\
 		operations/rotate.c		\
 		operations/rrotate.c	\
-		operations/swap.c
+		operations/swap.c		\
+		sort/sort_utils.c		\
+		sort/sort.c
 OBJS_DIR = objs/
 OBJS = $(addprefix $(OBJS_DIR), $(SRC:.c=.o))
 
@@ -28,6 +30,7 @@ $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJS_DIR)/init
 	@mkdir -p $(OBJS_DIR)/utils
 	@mkdir -p $(OBJS_DIR)/operations
+	@mkdir -p $(OBJS_DIR)/sort
 	@$(CC) $(FLAGS) -c $< -o $@
 
 libft:

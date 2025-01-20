@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:42:23 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 13:58:25 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 18:49:28 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	//Actualizar tamaños
 	(*stack_a)->size += 1;
 	(*stack_b)->size -= 1;
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
@@ -72,4 +73,5 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	//Actualizar tamaños
 	(*stack_b)->size += 1;
 	(*stack_a)->size -= 1;
+	ft_printf("pb\n");
 }
