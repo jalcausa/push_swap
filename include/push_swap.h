@@ -6,11 +6,13 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 11:13:25 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:38:04 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <limits.h>
+#include "../libft/libft.h"
 /* Double linked list */
 typedef struct s_node
 {
