@@ -5,7 +5,13 @@ RM = rm -rf
 NAME = push_swap
 SRC_DIR = src/
 SRC = push_swap.c \
-		init/arguments_check.c
+		init/arguments_check.c	\
+		utils/free_memory.c		\
+		utils/stack_creator.c	\
+		operations/push.c		\
+		operations/rotate.c		\
+		operations/rrotate.c	\
+		operations/swap.c
 OBJS_DIR = objs/
 OBJS = $(addprefix $(OBJS_DIR), $(SRC:.c=.o))
 
@@ -20,6 +26,8 @@ $(NAME): $(OBJS)
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJS_DIR)
 	@mkdir -p $(OBJS_DIR)/init
+	@mkdir -p $(OBJS_DIR)/utils
+	@mkdir -p $(OBJS_DIR)/operations
 	@$(CC) $(FLAGS) -c $< -o $@
 
 libft:

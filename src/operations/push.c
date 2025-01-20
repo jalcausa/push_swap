@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:42:23 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 10:11:40 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 13:58:25 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	else
 		(*stack_b)->last = node_to_move;
 	// Actualizar el puntero first de stack a
-	(*stack_a)->first = node_to_move;
+	(*stack_b)->first = node_to_move;
 	node_to_move->prev = NULL;
 	//Actualizar tamaños
 	(*stack_b)->size += 1;
