@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:13:44 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 11:01:30 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:12:23 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	sb(t_stack **stack_b)
 	(*stack_b)->first->next->index = aux_index;
 }
 
-void	ss(t_node **stack_a, t_node **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);

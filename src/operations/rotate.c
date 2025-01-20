@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:36:11 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 10:58:10 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 11:13:08 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	rb(t_stack **stack_b)
 	(*stack_b)->last = first;
 }
 
-void	rb(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
