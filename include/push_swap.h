@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 12:38:04 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:49:02 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,9 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+
+/*Argument check*/
+int	is_number(char *str);
+int	valid_size(const char *str);
+int	is_repeated(int n, int pos, char **argv);
+int	arguments_ok(int argc, char **argv);

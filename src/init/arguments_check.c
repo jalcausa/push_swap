@@ -6,11 +6,11 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 12:12:29 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 12:37:42 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:55:29 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 int	is_number(char *str)
 {
@@ -84,5 +84,7 @@ int	arguments_ok(int argc, char **argv)
 			return (0);
 		if (is_repeated(ft_atoi(argv[i]), i, argv))
 			return (0);
+		++i;
 	}
+	return (1);
 }
