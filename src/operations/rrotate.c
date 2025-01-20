@@ -6,49 +6,53 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:54:10 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/19 00:17:55 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 10:55:31 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	rra(t_node **stack_a)
+void	rra(t_stack **stack_a)
 {
-	t_node	*second_last;
 	t_node	*last;
 
-	if (!stack_a || !(*stack_a) || !((*stack_a)->next))
+	// Si el stack a está vacío o solo tiene un elemento no hacemos nada
+	if (!stack_a || !*stack_a || !(*stack_a)->first || !(*stack_a)->first->next)
 		return ;
-	second_last = *stack_a;
-	while (second_last->next->next)
-		second_last = second_last->next;
-	last = second_last->next;
-	second_last->next = NULL;
-	last->next = (*stack_a);
+	// Extraemos el último elemento y actualizamos el nuevo last del stack
+	last = (*stack_a)->last;
+	(*stack_a)->last = last->prev;
+	last->prev->next = NULL;
+	//Insertamos el last en la cima del stack
 	last->prev = NULL;
-	(*stack_a)->prev = last;
-	(*stack_a) = last;
+	last->next = (*stack_a)->first;
+	//Actualizamos el previo del primer nodo al nuevo primer nodo
+	(*stack_a)->first->prev = last;
+	//Actualizamos el primer nodo del stack
+	(*stack_a)->first = last;
 }
 
-void	rrb(t_node **stack_b)
+void	rrb(t_stack **stack_b)
 {
-	t_node	*second_last;
 	t_node	*last;
 
-	if (!stack_b || !(*stack_b) || !((*stack_b)->next))
+	// Si el stack b está vacío o solo tiene un elemento no hacemos nada
+	if (!stack_b || !*stack_b || !(*stack_b)->first || !(*stack_b)->first->next)
 		return ;
-	second_last = *stack_b;
-	while (second_last->next->next)
-		second_last = second_last->next;
-	last = second_last->next;
-	second_last->next = NULL;
-	last->next = (*stack_b);
+	// Extraemos el último elemento y actualizamos el nuevo last del stack
+	last = (*stack_b)->last;
+	(*stack_b)->last = last->prev;
+	last->prev->next = NULL;
+	//Insertamos el last en la cima del stack
 	last->prev = NULL;
-	(*stack_b)->prev = last;
-	(*stack_b) = last;
+	last->next = (*stack_b)->first;
+	//Actualizamos el previo del primer nodo al nuevo primer nodo
+	(*stack_b)->first->prev = last;
+	//Actualizamos el primer nodo del stack
+	(*stack_b)->first = last;
 }
 
-void	rrr(t_node **stack_a, t_node **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
