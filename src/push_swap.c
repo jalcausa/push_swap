@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:20:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 18:52:42 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/20 19:55:52 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,36 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 	int	a;
 	int	b;
 
-	while (stack_a->first || stack_b->first)
+	// Usamos punteros auxiliares para recorrer los stacks sin modificarlos
+	t_node *current_a = stack_a->first;
+	t_node *current_b = stack_b->first;
+
+	while (current_a || current_b)
 	{
-		if (stack_a->first)
+		// Imprimimos los valores de stack_a
+		if (current_a)
 		{
-			if (stack_a)
-				a = stack_a->first->value;
-			stack_a->first = stack_a->first->next;
+			a = current_a->value;
+			current_a = current_a->next;
 		}
 		else
 			a = 0;
-		if (stack_b->first)
+
+		// Imprimimos los valores de stack_b
+		if (current_b)
 		{
-			if (stack_b)
-				b = stack_b->first->value;
-			stack_b->first = stack_b->first->next;
+			b = current_b->value;
+			current_b = current_b->next;
 		}
 		else
 			b = 0;
+
+		// Imprimimos los valores de los stacks
 		printf("%d     %d \n", a, b);
 	}
 	printf("---------\nA     B \n\n");
 }
+
 
 int	main(int argc, char **argv)
 {
@@ -54,7 +62,9 @@ int	main(int argc, char **argv)
 	}
 	stack_a = create_stack_with_args(argv);
 	stack_b = create_stack();
+	print_stack(stack_a, stack_b);
 	sort(stack_a, stack_b);
+	print_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
