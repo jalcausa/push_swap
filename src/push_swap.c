@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:20:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 19:55:52 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:51:46 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	int	a;
+	int ai;
 	int	b;
 
 	// Usamos punteros auxiliares para recorrer los stacks sin modificarlos
@@ -27,6 +28,7 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 		if (current_a)
 		{
 			a = current_a->value;
+			ai = current_a->index;
 			current_a = current_a->next;
 		}
 		else
@@ -36,13 +38,14 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 		if (current_b)
 		{
 			b = current_b->value;
+			//bi = current_b->index;
 			current_b = current_b->next;
 		}
 		else
 			b = 0;
 
 		// Imprimimos los valores de los stacks
-		printf("%d     %d \n", a, b);
+		printf("%d,%d     %d \n", a, ai, b);
 	}
 	printf("---------\nA     B \n\n");
 }
