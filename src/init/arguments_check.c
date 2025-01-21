@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 12:12:29 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/20 12:55:29 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 19:57:23 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	is_repeated(int n, int pos, char **argv)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i] && i < pos)
 	{
 		if (ft_atoi(argv[i]) == n)
