@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:38 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 20:32:55 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:24:39 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	assign_indexes(t_stack *stack_a)
 	}
 }
 
-void	push_min(t_stack *stack_a, t_stack *stack_b)
+void	push_min(t_stack *stack_a, t_stack *stack_b, int pos)
 {
 	t_node	*cur;
 	
 	while ((cur = stack_a->first))
 	{
-		if (cur->index == 1)
+		if (cur->index == pos)
 		{
 			pb(&stack_a, &stack_b);
 			break ;

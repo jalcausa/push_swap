@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 20:28:10 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:25:13 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ void	free_stack(t_stack	*s);
 /* Sort utils */
 int		is_sorted(t_node *stack);
 void	assign_indexes(t_stack *stack_a);
-void	push_min(t_stack *stack_a, t_stack *stack_b);
+void	push_min(t_stack *stack_a, t_stack *stack_b, int pos);
 
 /* Sort*/
 void	sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
+void	sort_4(t_stack *stack_a, t_stack *stack_b);
 void	sort_4(t_stack *stack_a, t_stack *stack_b);
 

@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:33 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 20:17:09 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 23:33:01 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,23 @@ void	sort_3(t_stack *stack_a)
 		rra(&stack_a);
 	}
 }
-
+/*
 void	sort_4(t_stack *stack_a, t_stack *stack_b)
 {
-	push_min(stack_a, stack_b);
+	push_min(stack_a, stack_b, 1);
 	sort_3(stack_a);
 	pa(&stack_a, &stack_b);
 }
-
+La implementación de abajo hay casos que da más de 12 pasos
+void	sort_5(t_stack *stack_a, t_stack *stack_b)
+{
+	push_min(stack_a, stack_b, 1);
+	push_min(stack_a, stack_b, 2);
+	sort_3(stack_a);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+}
+*/
 void	sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size <= 1 || is_sorted(stack_a->first))
@@ -65,12 +74,6 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 	else 
 	{
 		assign_indexes(stack_a);
-		if (stack_a->size == 4)
-			sort_4(stack_a, stack_b);
+		//quick_sort()
 	}
-	/*else if (stack_a->size == 5)
-		sort_5(stack_a, stack_b);
-	else
-		quicksort(stack_a, stack_b);
-	*/
 }
