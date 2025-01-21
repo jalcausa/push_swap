@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:38 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 19:39:57 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/21 20:32:55 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,9 @@ void	push_min(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*cur;
 	
-	cur = stack_a->first;
-	while (cur->next)
+	while ((cur = stack_a->first))
 	{
-		if (cur->index == 0)
+		if (cur->index == 1)
 		{
 			pb(&stack_a, &stack_b);
 			break ;
