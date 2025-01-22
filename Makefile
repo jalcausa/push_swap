@@ -13,7 +13,10 @@ SRC = push_swap.c \
 		operations/rrotate.c	\
 		operations/swap.c		\
 		sort/sort_utils.c		\
-		sort/sort.c
+		sort/sort.c				\
+		sort/quick_sort.c		\
+		sort/move.c				\
+		sort/chunk_split.c
 OBJS_DIR = objs/
 OBJS = $(addprefix $(OBJS_DIR), $(SRC:.c=.o))
 

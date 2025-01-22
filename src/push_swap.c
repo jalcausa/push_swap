@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:20:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 19:51:42 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:46:59 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	int	a;
-	int ai;
+	int	ai;
 	int	b;
 
 	// Usamos punteros auxiliares para recorrer los stacks sin modificarlos
@@ -50,12 +50,11 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 	printf("---------\nA     B \n\n");
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
-	
+
 	if (argc < 2)
 		return (0);
 	if (!arguments_ok(argc, argv))
@@ -67,7 +66,7 @@ int	main(int argc, char **argv)
 	stack_b = create_stack();
 	print_stack(stack_a, stack_b);
 	sort(stack_a, stack_b);
-	print_stack(stack_a, stack_b);
+	//print_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

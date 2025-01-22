@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:33 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 15:09:43 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:36:54 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	sort_4(t_stack *stack_a, t_stack *stack_b)
 	pa(&stack_a, &stack_b);
 }
 */
+
 void	sort_5(t_stack *stack_a, t_stack *stack_b)
 {
 	while (stack_a->size > 3)
@@ -77,12 +78,13 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_a->size == 2)
 		sort_2(stack_a);
 	else if (stack_a->size == 3)
-		sort_3(stack_a); 
-	else 
+		sort_3(stack_a);
+	else
 	{
 		assign_indexes(stack_a);
 		if (stack_a->size == 5)
 			sort_5(stack_a, stack_b);
-		//quick_sort()
+		else
+			quicksort(stack_a, stack_b);
 	}
 }
