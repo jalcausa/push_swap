@@ -6,26 +6,26 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:38 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 23:24:39 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:08:17 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int	is_sorted(t_node *stack)
+int	is_sorted(t_node *node)
 {
 	int	prev;
 	
-	if (!stack || !(stack->next))
+	if (!node || !node->next)
 		return (1);
-	prev = stack->value;
-	stack = stack->next;
-	while (stack)
+	prev = node->value;
+	node = node->next;
+	while (node)
 	{
-		if (prev > stack->value)
+		if (prev > node->value)
 			return (0);
-		prev = stack->value;
-		stack = stack->next;
+		prev = node->value;
+		node = node->next;
 	}
 	return (1);
 }
@@ -66,12 +66,12 @@ void	push_min(t_stack *stack_a, t_stack *stack_b, int pos)
 	{
 		if (cur->index == pos)
 		{
-			pb(&stack_a, &stack_b);
+			pb(stack_a, stack_b);
 			break ;
 		}
 		else
 		{
-			ra(&stack_a);
+			ra(stack_a);
 		}
 	}
 }

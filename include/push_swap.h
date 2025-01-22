@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/21 23:48:34 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:08:55 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ typedef struct s_stack
 }	t_stack;
 
 /* Operations */
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-void	sa(t_stack **stack_a);
-void	sb(t_stack **stack_b);
-void	ss(t_stack **stack_a, t_stack **stack_b);
-void	ra(t_stack **stack_a);
-void	rb(t_stack **stack_b);
-void	rr(t_stack **stack_a, t_stack **stack_b);
-void	rra(t_stack **stack_a);
-void	rrb(t_stack **stack_b);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 /* Argument check */
 int		is_number(char *str);
@@ -54,7 +54,7 @@ t_stack	*create_stack_with_args(char **argv);
 void	free_stack(t_stack	*s);
 
 /* Sort utils */
-int		is_sorted(t_node *stack);
+int		is_sorted(t_node *node);
 void	assign_indexes(t_stack *stack_a);
 void	push_min(t_stack *stack_a, t_stack *stack_b, int pos);
 
