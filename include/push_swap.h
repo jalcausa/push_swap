@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 10:50:43 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:11:58 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 }	t_stack;
 
 /* Chunk structure*/
-typedef enum	e_loc
+typedef enum e_loc
 {
 	TOP_A,
 	BOTTOM_A,
@@ -41,7 +41,7 @@ typedef enum	e_loc
 typedef struct s_chunk
 {
 	t_loc	loc;
-	int			size;
+	int		size;
 }	t_chunk;
 
 typedef struct s_chunk_split
@@ -88,7 +88,8 @@ void	sort_5(t_stack *stack_a, t_stack *stack_b);
 
 /* Quicksort*/
 void	quicksort(t_stack *stack_a, t_stack *stack_b);
-void	rec_quicksort(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
+void	rec_quicksort(t_stack *stack_a, t_stack *stack_b,
+			t_chunk *current_chunk);
 void	sort_one(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
 void	sort_two(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
 void	chunk_to_top(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk);
@@ -101,11 +102,12 @@ void	move_from_bottom_a(t_stack *stack_a, t_stack *stack_b, t_loc to);
 void	move_from_bottom_b(t_stack *stack_a, t_stack *stack_b, t_loc to);
 
 /* Split*/
-void	split_chunk(t_stack *stack_a, t_stack *stack_b, 
-	t_chunk *current_chunk, t_chunk_split *chunk_split);
+void	split_chunk(t_stack *stack_a, t_stack *stack_b,
+			t_chunk *current_chunk, t_chunk_split *chunk_split);
 void	init_size(t_chunk *min, t_chunk *mid, t_chunk *max);
 void	set_split_loc(t_loc loc, t_chunk *min, t_chunk *mid, t_chunk *max);
-void	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
-	int *pivot_1, int *pivot_2);
-int		get_next_index(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
+int		set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
+			int *pivot_1);
+int		get_next_index(t_stack *stack_a, t_stack *stack_b,
+			t_chunk *current_chunk);
 int		chunk_max_index(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk);

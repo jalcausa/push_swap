@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:42:41 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 11:39:09 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:11:21 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	split_chunk(t_stack *stack_a, t_stack *stack_b,
 	init_size(&chunk_split->min, &chunk_split->mid, &chunk_split->max);
 	set_split_loc(current_chunk->loc, &chunk_split->min, &chunk_split->mid,
 		&chunk_split->max);
-	set_pivots(stack_a, stack_b, current_chunk, &pivot_1, &pivot_2);
+	pivot_2 = set_pivots(stack_a, stack_b, current_chunk, &pivot_1);
 	while (current_chunk->size--)
 	{
 		next_index = get_next_index(stack_a, stack_b, current_chunk);
@@ -73,11 +73,12 @@ void	set_split_loc(t_loc loc, t_chunk *min, t_chunk *mid, t_chunk *max)
 	}
 }
 
-void	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
-	int *pivot_1, int *pivot_2)
+int	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk
+	,int *pivot_1)
 {
 	int	pos_pivot_2;
 	int	pos_pivot_1;
+	int	pivot_2;
 	int	chunk_max;
 	int	aux;
 	
@@ -85,14 +86,15 @@ void	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
 	pos_pivot_1 = pos_pivot_2 * 2;
 	chunk_max = chunk_max_index(stack_a, stack_b, chunk);
 	aux = 0;
-	*pivot_2 = chunk_max - chunk->size + pos_pivot_2;
+	pivot_2 = chunk_max - chunk->size + pos_pivot_2;
 	*pivot_1 = chunk_max - chunk->size + pos_pivot_1;
-	if (*pivot_1 < *pivot_2)
+	if (*pivot_1 < pivot_2)
 	{
 		*pivot_1 = aux;
-		*pivot_1 = *pivot_2;
-		*pivot_2 = aux;
+		*pivot_1 = pivot_2;
+		pivot_2 = aux;
 	}
+	return pivot_2;
 }
 
 int	get_next_index(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk)
