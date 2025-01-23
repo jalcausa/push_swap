@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:43:10 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 10:50:08 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:13:48 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	chunk_max_index(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk)
 	t_node	*node;
 	int		size;
 	int		max_index;
-	
+
 	if (chunk->loc == TOP_A || chunk->loc == BOTTOM_A)
 		stack = stack_a;
 	else

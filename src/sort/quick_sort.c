@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:11:04 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 10:31:03 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:15:13 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	rec_quicksort(t_stack *stack_a, t_stack *stack_b,
 	chunk_to_top(stack_a, stack_b, current_chunk);
 	if (current_chunk->size <= 2)
 	{
-		
 		if (current_chunk->size == 2)
 			sort_two(stack_a, stack_b, current_chunk);
 		else if (current_chunk->size == 1)

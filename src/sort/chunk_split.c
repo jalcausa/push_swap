@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:42:41 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 12:11:21 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:15:30 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ void	set_split_loc(t_loc loc, t_chunk *min, t_chunk *mid, t_chunk *max)
 	}
 }
 
-int	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk
-	,int *pivot_1)
+int	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
+	int *pivot_1)
 {
 	int	pos_pivot_2;
 	int	pos_pivot_1;
 	int	pivot_2;
 	int	chunk_max;
 	int	aux;
-	
+
 	pos_pivot_2 = chunk->size / 3;
 	pos_pivot_1 = pos_pivot_2 * 2;
 	chunk_max = chunk_max_index(stack_a, stack_b, chunk);
@@ -94,7 +94,7 @@ int	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk
 		*pivot_1 = pivot_2;
 		pivot_2 = aux;
 	}
-	return pivot_2;
+	return (pivot_2);
 }
 
 int	get_next_index(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk)
