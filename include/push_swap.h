@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 18:34:57 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 10:50:43 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	sort_5(t_stack *stack_a, t_stack *stack_b);
 void	quicksort(t_stack *stack_a, t_stack *stack_b);
 void	rec_quicksort(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
 void	sort_one(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
+void	sort_two(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
+void	chunk_to_top(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk);
 
 /* move */
 int		move_from_to(t_stack *stack_a, t_stack *stack_b, t_loc from, t_loc to);
@@ -103,5 +105,7 @@ void	split_chunk(t_stack *stack_a, t_stack *stack_b,
 	t_chunk *current_chunk, t_chunk_split *chunk_split);
 void	init_size(t_chunk *min, t_chunk *mid, t_chunk *max);
 void	set_split_loc(t_loc loc, t_chunk *min, t_chunk *mid, t_chunk *max);
-void	set_pivots(int size, int *pivot_1, int *pivot_2);
+void	set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
+	int *pivot_1, int *pivot_2);
 int		get_next_index(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk);
+int		chunk_max_index(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk);

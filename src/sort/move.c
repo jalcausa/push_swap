@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:27:49 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 18:41:10 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 09:58:30 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	move_from_to(t_stack *stack_a, t_stack *stack_b, t_loc from, t_loc to)
 		move_from_top_b(stack_a, stack_b, to);
 	else if (from == BOTTOM_A)
 		move_from_bottom_a(stack_a, stack_b, to);
-	else
+	else if (from == BOTTOM_B)
 		move_from_bottom_b(stack_a, stack_b, to);
 	return (1);
 }
@@ -31,7 +31,7 @@ void	move_from_top_a(t_stack *stack_a, t_stack *stack_b, t_loc to)
 		pb(stack_a, stack_b);
 	else if (to == BOTTOM_A)
 		ra(stack_a);
-	else
+	else if (to == BOTTOM_B)
 	{
 		pb(stack_a, stack_b);
 		rb(stack_b);
@@ -44,7 +44,7 @@ void	move_from_top_b(t_stack *stack_a, t_stack *stack_b, t_loc to)
 		pa(stack_a, stack_b);
 	else if (to == BOTTOM_B)
 		rb(stack_b);
-	else
+	else if (to == BOTTOM_A)
 	{
 		pa(stack_a, stack_b);
 		ra(stack_a);
@@ -60,7 +60,7 @@ void	move_from_bottom_a(t_stack *stack_a, t_stack *stack_b, t_loc to)
 		rra(stack_a);
 		pb(stack_a, stack_b);
 	}
-	else
+	else if (to == BOTTOM_B)
 	{
 		rra(stack_a);
 		pb(stack_a, stack_b);
@@ -77,7 +77,7 @@ void	move_from_bottom_b(t_stack *stack_a, t_stack *stack_b, t_loc to)
 		rrb(stack_b);
 		pa(stack_a, stack_b);
 	}
-	else
+	else if (to == BOTTOM_A)
 	{
 		rrb(stack_b);
 		pa(stack_a, stack_b);

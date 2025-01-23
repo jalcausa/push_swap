@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:11:04 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 18:38:08 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 10:31:03 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ void	rec_quicksort(t_stack *stack_a, t_stack *stack_b,
 {
 	t_chunk_split	chunk_split;
 
-	if (current_chunk->size == 1)
+	chunk_to_top(stack_a, stack_b, current_chunk);
+	if (current_chunk->size <= 2)
 	{
-		sort_one(stack_a, stack_b, current_chunk);
+		
+		if (current_chunk->size == 2)
+			sort_two(stack_a, stack_b, current_chunk);
+		else if (current_chunk->size == 1)
+			sort_one(stack_a, stack_b, current_chunk);
 		return ;
 	}
 	split_chunk(stack_a, stack_b, current_chunk, &chunk_split);
@@ -42,4 +47,16 @@ void	sort_one(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk)
 	if (current_chunk->loc != TOP_A)
 		move_from_to(stack_a, stack_b, current_chunk->loc, TOP_A);
 	current_chunk->size -= 1;
+}
+
+void	sort_two(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk)
+{
+	if (current_chunk->loc != TOP_A)
+	{
+		move_from_to(stack_a, stack_b, current_chunk->loc, TOP_A);
+		move_from_to(stack_a, stack_b, current_chunk->loc, TOP_A);
+	}
+	if (stack_a->first->index > stack_a->first->next->index)
+		sa(stack_a);
+	current_chunk->size -= 2;
 }

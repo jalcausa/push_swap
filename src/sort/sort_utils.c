@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:38 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 16:48:34 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 10:14:29 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ void	assign_indexes(t_stack *stack_a)
 			++index;
 		}
 	}
+}
+
+void	chunk_to_top(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk)
+{
+	if (chunk->loc == BOTTOM_B && chunk->size == stack_b->size)
+		chunk->loc = TOP_B;
+	if (chunk->loc == BOTTOM_A && chunk->size == stack_a->size)
+		chunk->loc = TOP_A;
 }
 /*
 void	push_min(t_stack *stack_a, t_stack *stack_b, int pos)
