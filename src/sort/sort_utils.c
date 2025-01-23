@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:38 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 10:14:29 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:19:13 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,24 +65,3 @@ void	chunk_to_top(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk)
 	if (chunk->loc == BOTTOM_A && chunk->size == stack_a->size)
 		chunk->loc = TOP_A;
 }
-/*
-void	push_min(t_stack *stack_a, t_stack *stack_b, int pos)
-{
-	t_node	*cur;
-
-	cur = stack_a->first;
-	while (cur)
-	{
-		if (cur->index == pos)
-		{
-			pb(stack_a, stack_b);
-			break ;
-		}
-		else
-		{
-			ra(stack_a);
-		}
-	}
-	cur = stack_a->first;
-}
-*/

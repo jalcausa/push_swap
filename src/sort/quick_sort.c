@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:11:04 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 12:15:13 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:03:11 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	sort_two(t_stack *stack_a, t_stack *stack_b, t_chunk *current_chunk)
 		move_from_to(stack_a, stack_b, current_chunk->loc, TOP_A);
 	}
 	if (stack_a->first->index > stack_a->first->next->index)
-		sa(stack_a);
+		sa(stack_a, 1);
 	current_chunk->size -= 2;
 }

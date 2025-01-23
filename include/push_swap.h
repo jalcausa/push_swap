@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 12:11:58 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:10:33 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ typedef struct s_chunk_split
 }	t_chunk_split;
 
 /* Operations */
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
-void	sa(t_stack *stack_a);
-void	sb(t_stack *stack_b);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	ra(t_stack *stack_a);
-void	rb(t_stack *stack_b);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rra(t_stack *stack_a);
-void	rrb(t_stack *stack_b);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b, int print);
+void	pb(t_stack *stack_a, t_stack *stack_b, int print);
+void	sa(t_stack *stack_a, int print);
+void	sb(t_stack *stack_b, int print);
+void	ss(t_stack *stack_a, t_stack *stack_b, int print);
+void	ra(t_stack *stack_a, int print);
+void	rb(t_stack *stack_b, int print);
+void	rr(t_stack *stack_a, t_stack *stack_b, int print);
+void	rra(t_stack *stack_a, int print);
+void	rrb(t_stack *stack_b, int print);
+void	rrr(t_stack *stack_a, t_stack *stack_b, int print);
 
 /* Argument check */
 int		is_number(char *str);
@@ -78,7 +78,6 @@ void	free_stack(t_stack	*s);
 /* Sort utils */
 int		is_sorted(t_node *node);
 void	assign_indexes(t_stack *stack_a);
-void	push_min(t_stack *stack_a, t_stack *stack_b, int pos);
 
 /* Sort*/
 void	sort(t_stack *stack_a, t_stack *stack_b);
@@ -111,3 +110,10 @@ int		set_pivots(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk,
 int		get_next_index(t_stack *stack_a, t_stack *stack_b,
 			t_chunk *current_chunk);
 int		chunk_max_index(t_stack *stack_a, t_stack *stack_b, t_chunk *chunk);
+
+/* Bonus */
+void	ft_operations(char *line, t_stack *stack_a, t_stack *stack_b);
+void	ft_operations_2(char *line, t_stack *stack_a, t_stack *stack_b);
+void	ft_check(t_stack *stack_a, t_stack *stack_b);
+
+//void	print_stack(t_stack *stack_a, t_stack *stack_b);

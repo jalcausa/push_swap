@@ -6,13 +6,13 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 19:42:23 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 15:03:20 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:57:43 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	t_node	*node_to_move;
 
@@ -41,10 +41,11 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	//Actualizar tamaños
 	stack_a->size += 1;
 	stack_b->size -= 1;
-	ft_printf("pa\n");
+	if (print == 1)
+		ft_printf("pa\n");
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	t_node	*node_to_move;
 
@@ -73,5 +74,6 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	//Actualizar tamaños
 	stack_b->size += 1;
 	stack_a->size -= 1;
-	ft_printf("pb\n");
+	if (print == 1)
+		ft_printf("pb\n");
 }

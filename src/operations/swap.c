@@ -6,13 +6,13 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:13:44 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 15:05:26 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:01:18 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	sa(t_stack *stack_a)
+void	sa(t_stack *stack_a, int print)
 {
 	int	aux_val;
 	int	aux_index;
@@ -26,10 +26,11 @@ void	sa(t_stack *stack_a)
 	stack_a->first->index = stack_a->first->next->index;
 	stack_a->first->next->value = aux_val;
 	stack_a->first->next->index = aux_index;
-	ft_printf("sa\n");
+	if (print == 1)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack *stack_b)
+void	sb(t_stack *stack_b, int print)
 {
 	int	aux_val;
 	int	aux_index;
@@ -43,12 +44,14 @@ void	sb(t_stack *stack_b)
 	stack_b->first->index = stack_b->first->next->index;
 	stack_b->first->next->value = aux_val;
 	stack_b->first->next->index = aux_index;
-	ft_printf("sb\n");
+	if (print == 1)
+		ft_printf("sb\n");
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b, int print)
 {
-	sa(stack_a);
-	sb(stack_b);
-	ft_printf("ss\n");
+	sa(stack_a, 0);
+	sb(stack_b, 0);
+	if (print == 1)
+		ft_printf("ss\n");
 }

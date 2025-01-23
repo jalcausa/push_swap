@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:29:33 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 18:36:54 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:02:56 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_2(t_stack *stack_a)
 {
 	if (stack_a->first->value > stack_a->last->value)
-		sa(stack_a);
+		sa(stack_a, 1);
 }
 
 void	sort_3(t_stack *stack_a)
@@ -29,21 +29,21 @@ void	sort_3(t_stack *stack_a)
 	z = stack_a->last->value;
 	if (x < y && y > z && x < z)
 	{
-		rra(stack_a);
-		sa(stack_a);
+		rra(stack_a, 1);
+		sa(stack_a, 1);
 	}
 	else if (x < y && y > z && x > z)
 	{
-		rra(stack_a);
+		rra(stack_a, 1);
 	}
 	else if (x > y && y < z && x < z)
-		sa(stack_a);
+		sa(stack_a, 1);
 	else if (x > y && y < z && x > z)
-		ra(stack_a);
+		ra(stack_a, 1);
 	else if (x > y && y > z && x > z)
 	{
-		sa(stack_a);
-		rra(stack_a);
+		sa(stack_a, 1);
+		rra(stack_a, 1);
 	}
 }
 /*
@@ -60,15 +60,15 @@ void	sort_5(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->size > 3)
 	{
 		if (stack_a->first->index == 1 || stack_a->first->index == 2)
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 		else
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	if (stack_b->first->index == 1)
-		sb(stack_b);
+		sb(stack_b, 1);
 	sort_3(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
+	pa(stack_a, stack_b, 1);
+	pa(stack_a, stack_b, 1);
 }
 
 void	sort(t_stack *stack_a, t_stack *stack_b)

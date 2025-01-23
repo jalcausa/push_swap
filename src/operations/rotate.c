@@ -6,13 +6,13 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 23:36:11 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/22 15:02:25 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:01:38 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	ra(t_stack *stack_a)
+void	ra(t_stack *stack_a, int print)
 {
 	t_node	*first;
 
@@ -30,10 +30,11 @@ void	ra(t_stack *stack_a)
 	first->next = NULL;
 	// Se actualiza el nuevo último nodo de la estructura stack
 	stack_a->last = first;
-	ft_printf("ra\n");
+	if (print == 1)
+		ft_printf("ra\n");
 }
 
-void	rb(t_stack *stack_b)
+void	rb(t_stack *stack_b, int print)
 {
 	t_node	*first;
 
@@ -51,12 +52,14 @@ void	rb(t_stack *stack_b)
 	first->next = NULL;
 	// Se actualiza el nuevo último nodo de la estructura stack
 	stack_b->last = first;
-	ft_printf("rb\n");
+	if (print == 1)
+		ft_printf("rb\n");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stack *stack_a, t_stack *stack_b, int print)
 {
-	ra(stack_a);
-	rb(stack_b);
-	ft_printf("rr\n");
+	ra(stack_a, 0);
+	rb(stack_b, 0);
+	if (print == 1)
+		ft_printf("rr\n");
 }
