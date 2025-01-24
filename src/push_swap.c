@@ -6,25 +6,11 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:20:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/24 14:11:27 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:21:07 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-int	has_spaces(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			return (1);
-		++i;
-	}
-	return (0);
-}
 
 int	arguments_ok(int argc, char **argv)
 {
@@ -32,10 +18,7 @@ int	arguments_ok(int argc, char **argv)
 	
 	if (argc == 2)
 	{
-		if (has_spaces(argv[1]))
-			args = ft_split(argv[1], ' ');
-		else
-			args = ft_split(argv[1], '\n');
+		args = ft_split(argv[1], ' ');
 		if (!one_argument_ok(args))
 		{
 			write(2, "Error\n", 6);
