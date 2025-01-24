@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:27:14 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/24 10:44:07 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/24 10:56:17 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		is_repeated(int n, int pos, char **argv, int i);
 int		arguments_ok(int argc, char **argv);
 int		one_argument_ok(char **args);
 int		more_arguments_ok(int argc, char **argv);
+void	free_args(char **args);
 
 
 /*Stack utils */

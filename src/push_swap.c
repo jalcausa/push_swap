@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 19:20:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/24 10:44:46 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:01:12 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	arguments_ok(int argc, char **argv)
 		if (!one_argument_ok(args))
 		{
 			write(2, "Error\n", 6);
+			free_args(args);
 			exit(1);
 		}
+		free_args(args);
 	}
 	else
 	{
@@ -41,6 +43,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	**args;
 
 	if (argc < 2)
 		return (0);
@@ -50,12 +53,15 @@ int	main(int argc, char **argv)
 			exit(1);
 		}
 	if (argc == 2)
-		stack_a = create_stack_with_args(ft_split(argv[1], ' '), 0);
+	{
+		args = ft_split(argv[1], ' ');
+		stack_a = create_stack_with_args(args, 0);
+		free_args(args);
+	}
 	else
 		stack_a = create_stack_with_args(argv, 1);
 	stack_b = create_stack();
 	sort(stack_a, stack_b);
-	//free(args);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
