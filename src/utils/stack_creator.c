@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:22:03 by jalcausa          #+#    #+#             */
-/*   Updated: 2025/01/23 16:25:08 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/24 10:32:05 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,12 @@ t_stack	*create_stack(void)
 	return (new_stack);
 }
 
-t_stack	*create_stack_with_args(char **argv)
+t_stack	*create_stack_with_args(char **argv, int i)
 {
 	t_stack	*new_stack;
 	t_node	*new_node;
-	int		i;
 
 	new_stack = create_stack();
-	i = 1;
 	while (new_stack != NULL && argv[i])
 	{
 		new_node = create_node(ft_atoi(argv[i++]), 0);
