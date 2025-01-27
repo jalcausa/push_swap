@@ -6,6 +6,7 @@ NAME = push_swap
 SRC_DIR = src/
 SRC =	push_swap.c				\
 		init/arguments_check.c	\
+		init/arguments_ok.c		\
 		utils/free_memory.c		\
 		utils/stack_creator.c	\
 		utils/print_stack.c		\
@@ -26,6 +27,7 @@ OBJS = $(addprefix $(OBJS_DIR), $(SRC:.c=.o))
 BONUS_NAME = checker
 BONUS_SRC =	bonus/checker.c			\
 			init/arguments_check.c	\
+			init/arguments_ok.c		\
 			operations/push.c		\
 			operations/rotate.c		\
 			operations/rrotate.c	\
